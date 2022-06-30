@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Diffs</key>
+	<array>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>import SwiftUI
+
+// Declaring a set.
+// You need to declare the data type of the set as follows.
+var testSet : Set&lt;Int&gt; = Set&lt;Int&gt;()
+
+testSet.insert(1)
+testSet.insert(2)
+testSet.insert(3)
+testSet.insert(3)
+testSet.insert(3)
+
+testSet.count
+
+// Since a set is a type of collections, thus a set can be used as a "for" sentence.
+for item in testSet {
+    // The index is not the index number because the index of a set is not a number but a hash value. Thus, the output from print is random. Everytime the return changes.
+    // -&gt; See note #3.
+    print("item: ", item)
+}
+
+
+// Operators for Set
+// String data type also can be stored in a set.
+var myFriends : Set&lt;String&gt; = ["Raven", "David", "Guell", "Mizz"]
+
+// In an array, this works as the same.
+var myBestFriends: [String] = ["Raven", "David", "Guell", "Mizz"]
+
+myFriends.contains("Raven")  // true
+myBestFriends.contains("Raymond")  // false
+
+
+if myFriends.contains("Mizz") {
+    print("Mizz is one of my friends.")
+}
+
+// Removing an element
+// 1. Find the element from the collection; get the index of the element.
+// 2. Remove the item from the collection using the index number.
+if let indexToRemove = myFriends.firstIndex(of: "Mizz"){  // 1. --&gt; Optional unwrapping.
+    print("indexToRemove: ", indexToRemove)  // 3.
+    myFriends.remove(at: indexToRemove)  // 2.
+}
+
+if !myFriends.contains("Mizz") {
+    print("Mizz is not in my friends.")
+}
+</string>
+			<key>ModifiedRange</key>
+			<string>{0, 1400}</string>
+			<key>OriginalContent</key>
+			<string>
+</string>
+			<key>OriginalRange</key>
+			<string>{0, 1}</string>
+		</dict>
+	</array>
+	<key>FormatVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

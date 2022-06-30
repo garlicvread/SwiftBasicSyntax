@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>BaseFile</key>
+	<string>Chapters/Chapter1.playgroundchapter/Pages/Template.playgroundpage/main.swift</string>
+	<key>Diffs</key>
+	<array>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>// Closure
+
+// A closure is a sort of function(or a method) that stores the environment at the function or method is declared,
+// then is executed as the stored environment when called.
+
+import SwiftUI
+
+// A closure is named as closure because it closures the scope(lexical scope) of the moment of declaration,
+// then uses the scope when the moment of execution.
+// The lambda function is not exactly the same as closure,
+// but closure is included in the lambda function in a lot of languages,
+// so many people use closure and lambda function without distinction.
+
+// A closure that returns a String.
+let MyName : String = {
+    return "My Name is Garlicvread."
+}()
+
+print(MyName)
+
+
+// Definition of the closure
+// A closure that contains parameter(s).
+let MyRealName = { (name: String) -&gt; String in
+    return "\(name), an AI researcher"
+}
+
+MyRealName("Garlicvread")
+
+
+// MyTestName receives String as the parameter and returns String.
+// The type of the constant MyTestName is a type that receives a String and returns a String, and this time, the type equals a closure.
+let MyTestName: (String) -&gt; String = { (name: String) -&gt; String in
+    return "I, \(name), is now working on adapting myself to the Swift language."
+}
+
+MyTestName("Garlicvread")
+
+
+// The closure is actually the same with a sort of method.
+// This is a closure that contains parameter(s) and logic without any return.
+// If the closure should not return anything, then write "(input type) -&gt; Void" to not to return anything.
+let MyClosureWithLogic : (String) -&gt; Void = { (name: String) in
+    print("An AI researcher \(name).")
+}
+
+MyClosureWithLogic("Garlicvread")
+</string>
+			<key>ModifiedRange</key>
+			<string>{0, 1640}</string>
+			<key>OriginalContent</key>
+			<string>
+</string>
+			<key>OriginalRange</key>
+			<string>{0, 1}</string>
+		</dict>
+	</array>
+	<key>FormatVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

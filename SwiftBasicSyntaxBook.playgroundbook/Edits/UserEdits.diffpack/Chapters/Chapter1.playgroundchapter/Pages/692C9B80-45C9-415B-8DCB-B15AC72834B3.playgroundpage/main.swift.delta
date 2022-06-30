@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>BaseFile</key>
+	<string>Chapters/Chapter1.playgroundchapter/Pages/Template.playgroundpage/main.swift</string>
+	<key>Diffs</key>
+	<array>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>// closure as parameter(s)
+
+import SwiftUI
+
+// In this case, we declared a method that has a closure as its parameter.
+// When you call the method "SayHello()", you can notice whether the call event is finished or not.
+// "() -&gt; Void" itself is a closure, and also is a method.
+// "() -&gt; Void" does not return anything, but lets you know the occurrence of an event. It is conceptually the same with "func completion() {}".
+func SayHello(completion: () -&gt; Void) {
+    print("SayHello() has been called.")
+    sleep(2)  // sleep execution by 2 seconds
+    completion()
+}
+
+// Alternative
+SayHello(completion: {
+    print("2 seconds has been passed. 1")
+})
+
+SayHello() {
+    print("2 seconds has been passed. 2")
+}
+
+// When the last part of the code is closure as a parameter (e.g. () -&gt; Void),
+// then we can write it as a code block. Such as:
+SayHello {
+    print("2 seconds has been passed. 3")
+}
+
+
+// Then, is it possible a closuer as a parameter can also has a closuer parameter?
+// A closure as a parameter that returns data
+// "(String) -&gt; Void" is conceptually the same with "func completion(InputData: String) {}".
+
+func SayHelloWithName(completion: (String) -&gt; Void) {
+    print("SayHelloWithName() has been called.")
+    sleep(2)
+    // Returns data when the closure is executed.
+    completion("Hello, World!")
+}
+
+SayHelloWithName(completion: { (comment: String) in
+    print("He said 2 seconds later 1. comment: ", comment)
+})
+
+SayHelloWithName(completion: { comment in
+    print("He said 2 seconds later 2. comment:", comment)
+})
+
+SayHelloWithName { comment in
+    print("He said 2 seconds later 3. comment: ", comment)
+}
+
+SayHelloWithName {
+    print("He said 2 seconds later 4. comment: ", $0)
+}
+
+
+// With two closures as parameters
+// "completion: (String, String) -&gt; Void" is conceptually the same with "func completion(first: String, second: String) {}
+func SayHelloWithFullName(completion: (String, String) -&gt; Void) {
+    print("SayHelloWithFullName() has been called.")
+    sleep(2)
+    // Returns data when the closure is executed.
+    completion("무한도전", "무야호")
+}
+
+SayHelloWithFullName { first, second in
+    print("First String 1: \(first), Second String 1: \(second)")
+}
+
+// When you do not want to use the first parameter:
+SayHelloWithFullName { _, second in
+    print("Second String 1: \(second)")
+}
+
+SayHelloWithFullName {
+    print("First String 2: \($0), Second String 2 \($1)")
+}
+
+
+// When you do not want to execute the closure.
+// Thus, wrap it with a parenthesis and make it optional.
+// Because the parameter becomes optional, make the completion() optional as well.
+// The basic return must be set as nil because the closure is now optional. 
+func SayHelloOptional ( completion: ( () -&gt; Void)? = nil ) {
+    print("SayHelloWithoutAnyReturn() has been called")
+    sleep(2)
+    completion?()
+}
+
+SayHelloOptional()
+
+
+// When you want to receive a return again
+SayHelloOptional(completion: {
+    print("Two seconds have been passed!")
+})
+
+// (Int) -&gt; String
+// This type of closure is used when you use collection type.
+// When you receive something(generic) then return something with closure. 
+func transform(number: Int) -&gt; String {
+    return "Number: \(number)"
+}
+
+// Collection type with closure
+var MyNumbers : [Int] = [0, 1, 2, 3, 4, 5]
+
+// Longer form
+//var TransformedNumbers = MyNumbers.map { (SingleNumber: Int) -&gt; String in
+//    return "Number: \(SingleNumber)"
+//}
+
+// Shorten form
+//var TransformedNumbers = MyNumbers.map { SingleNumber in
+//    return "Number: \(SingleNumber)"
+//}
+
+// Shorten form 2
+var TransformedNumbers = MyNumbers.map {
+    return "Number: \($0)"
+}
+</string>
+			<key>ModifiedRange</key>
+			<string>{0, 3616}</string>
+			<key>OriginalContent</key>
+			<string>
+</string>
+			<key>OriginalRange</key>
+			<string>{0, 1}</string>
+		</dict>
+	</array>
+	<key>FormatVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

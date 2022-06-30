@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>BaseFile</key>
+	<string>Chapters/Chapter1.playgroundchapter/Pages/Template.playgroundpage/main.swift</string>
+	<key>Diffs</key>
+	<array>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>// A generic is a type of array that can include any type of data.
+
+import SwiftUI
+
+// &lt;&gt;: a sign for a generic.
+// In here, we use "SomeElements" to represent the generic for easier understanding.
+
+// However, "T" is more frequently used instead. T seems to be an abbreviation of "Type".
+// Thus, what you're gonna find will be like this:
+// struct MyArray&lt;T&gt; {
+//     var elements : [T] = [T] {}
+
+struct MyArray&lt;SomeElements&gt; {
+    
+    // Declare an array element(== property) which includes a generic inside.
+    // In this case, SomeElements has no declared shape.
+    var elements : [SomeElements] = [SomeElements]()
+    
+    // Declare the generator
+    // Actually, a struct does not need to have an initializer, but this time, we're gonna create the initializer just for convenience.
+    init(_ elements: [SomeElements]) {
+        // When the parameter "SomeElements" is inputted, the element "self.elements", the struct already has receives it to store the data. 
+        self.elements = elements
+    }
+}
+
+struct Friend {
+    var name: String
+}
+
+struct AppleCoders {
+    var name: String
+}
+
+var MyTestArray = MyArray([1, 2, 3])  // MyArray is an array but any type of data can be put into it. In this case, Int-type data is stored.
+print("MyTestArray: \(MyTestArray)")
+
+var MyTestStringArray = MyArray(["A", "B", "C"])  // String-type data is stored in "MyArray" array.
+print("MyTestStringArray: \(MyTestStringArray)")
+
+let friend1 = Friend(name: "David")
+let friend2 = Friend(name: "John")
+let friend3 = Friend(name: "White")
+
+var MyFriendsArray = MyArray([friend1, friend2, friend3])
+print("MyFriendsArray: \(MyFriendsArray)")
+</string>
+			<key>ModifiedRange</key>
+			<string>{0, 1639}</string>
+			<key>OriginalContent</key>
+			<string></string>
+			<key>OriginalRange</key>
+			<string>{0, 0}</string>
+		</dict>
+	</array>
+	<key>FormatVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

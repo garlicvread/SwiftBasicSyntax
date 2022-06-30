@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>BaseFile</key>
+	<string>Chapters/Chapter1.playgroundchapter/Pages/Template.playgroundpage/main.swift</string>
+	<key>Diffs</key>
+	<array>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>// Collection 1: Dictionary
+
+import SwiftUI
+
+var myFriends = ["BestFriend" : "Garlicvread",
+                 "SecondBestFriend" : "RaymondKim",
+                 "ThirdBestFriend" : "Philex"
+]
+
+let myBestFriend = myFriends["BestFriend", default: "No Friend"]
+let mySecondBestFriend = myFriends["SecondBestFriend"]
+
+print(myBestFriend)
+print(mySecondBestFriend)
+
+
+myFriends["BestFriend"] = "Garlicvread AI"
+let myNewBestFriend = myFriends["BestFriend"]
+print(myNewBestFriend)
+
+
+myFriends.updateValue("MiranKim", forKey: "GirlFriend")
+let girlFriend = myFriends["GirlFriend"]
+print(girlFriend)
+
+
+
+// Ways of creating an empty dictionary
+let emptyDictionary : [String : Int] = [:]
+let emptyDictionary2 : [String : Int] = [String : Int]()
+let emptyDictionary3 = [String : Int]()
+
+print("emptyDictionary", emptyDictionary)
+print("emptyDictionary2", emptyDictionary2)
+print("emptyDictionary3", emptyDictionary3)
+
+let myEmptyDictionary : [String : Int] = Dictionary&lt;String, Int&gt;()
+
+print("myEmptyDictionary", myEmptyDictionary)
+
+
+
+myFriends.count
+
+for item in myFriends {
+    print("item: ", item)
+}
+
+print()
+
+for (key, value) in myFriends {
+    print(key)
+}
+
+print()
+
+for key in myFriends.keys {
+    print("\(key)")
+}
+
+print()
+
+for value in myFriends.values {
+    print("\(value)")
+}
+
+</string>
+			<key>ModifiedRange</key>
+			<string>{1, 1278}</string>
+			<key>OriginalContent</key>
+			<string></string>
+			<key>OriginalRange</key>
+			<string>{1, 0}</string>
+		</dict>
+	</array>
+	<key>FormatVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

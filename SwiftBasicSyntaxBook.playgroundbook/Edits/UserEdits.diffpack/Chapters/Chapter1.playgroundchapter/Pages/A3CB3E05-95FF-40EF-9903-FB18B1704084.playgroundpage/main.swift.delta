@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>BaseFile</key>
+	<string>Chapters/Chapter1.playgroundchapter/Pages/Template.playgroundpage/main.swift</string>
+	<key>Diffs</key>
+	<array>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>import UIKit
+
+enum School {
+    case elementary
+    case middle
+    case high
+}
+
+
+let YourSchool = School.high
+print("Your School: ", YourSchool)
+
+
+enum Grade: Int {
+    case first = 1
+    case second = 2
+}
+
+
+let YourGrade = Grade.second.rawValue
+print("Your Grade: ", YourGrade)
+
+
+enum SchoolDetail {
+    case elementary(name: String)
+    case middle(name: String)
+    case high(name: String)
+    
+    func GetSchoolName() -&gt; String {
+        switch self {
+        case .elementary(let name):
+            return name
+            
+        case let .middle(name):
+            return name
+            
+        case .high(let name):
+            return name
+        }
+    }
+}
+
+let YourMiddleSchoolName = SchoolDetail.middle(name: "yourmiddleschoolname")
+let YourHighSchoolName = SchoolDetail.high(name: "yourhighschoolname")
+
+print("Your Middle School Name: \(YourMiddleSchoolName)")
+
+print("Your High School Name: \(YourHighSchoolName.GetSchoolName())")
+</string>
+			<key>ModifiedRange</key>
+			<string>{0, 951}</string>
+			<key>OriginalContent</key>
+			<string>
+</string>
+			<key>OriginalRange</key>
+			<string>{0, 1}</string>
+		</dict>
+	</array>
+	<key>FormatVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

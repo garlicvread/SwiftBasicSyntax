@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>BaseFile</key>
+	<string>Chapters/Chapter1.playgroundchapter/Pages/Template.playgroundpage/main.swift</string>
+	<key>Diffs</key>
+	<array>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>// A struct can has methods, and can use their parameters.
+
+import SwiftUI
+
+struct Friend {
+    var name: String
+    var age: Int
+    
+    func sayHello() -&gt; String {
+        print("sayHello(): ")
+        return "My name is \(name), \(age) years old man."
+    }
+}
+
+var myFirend = Friend(name: "Raymond", age: 40)
+
+print(myFirend.sayHello())
+</string>
+			<key>ModifiedRange</key>
+			<string>{0, 341}</string>
+			<key>OriginalContent</key>
+			<string>
+</string>
+			<key>OriginalRange</key>
+			<string>{0, 1}</string>
+		</dict>
+	</array>
+	<key>FormatVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

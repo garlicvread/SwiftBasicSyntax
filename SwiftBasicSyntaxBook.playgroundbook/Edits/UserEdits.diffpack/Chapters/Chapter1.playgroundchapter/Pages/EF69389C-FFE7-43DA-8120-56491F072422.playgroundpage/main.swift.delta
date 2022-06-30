@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>BaseFile</key>
+	<string>Chapters/Chapter1.playgroundchapter/Pages/Template.playgroundpage/main.swift</string>
+	<key>Diffs</key>
+	<array>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>import SwiftUI
+
+print("======== Struct ========")
+print()
+
+// Data model: struct
+// The model will be uploaded on a physical memory area.
+struct TestStruct {
+    var name: String
+    var subscriberCount: Int
+}
+
+var devGarlicvread = TestStruct(name: "Garlicvread", subscriberCount: 1000)
+
+// Duplicate the value.
+var devGarlicvreadClone = devGarlicvread
+
+print("Before value change, devGarlicvreadClone.name: \(devGarlicvreadClone.name)")
+
+devGarlicvreadClone.name = "무야호"
+
+print("After value changed, devGarlicvreadClone.name: \(devGarlicvreadClone.name)")
+
+print("After value changed, devGarlicvreadClone.name: \(devGarlicvread.name)")
+
+print()
+print("======== Class ========")
+print()
+
+// Data model: Class
+class TestClass {
+    var name: String
+    var subscribersCount: Int
+    
+    // init: for a class, you need an initializer(생성자) to load the data to the memory.
+    // With the "init" method which has parameters, you can input parameters to the class object.
+    init(name: String, subscribersCount: Int) {
+        self.name = name
+        self.subscribersCount = subscribersCount
+    }
+}
+
+var Garlicvread = TestClass(name: "DevGarlicvread", subscribersCount: 1000)
+
+// Duplicate the data
+var GarlicvreadClone = Garlicvread
+
+print("Before value change, Garlicvread.name: \(GarlicvreadClone.name)")
+
+GarlicvreadClone.name = "그만큼 재미있으시다는 거지"
+
+print("After value changed, GalicvreadClone.name: \(GarlicvreadClone.name)")
+
+// For the class, when the value of the cloned variable changes, the value of the original variable also changes.
+// This is because a class shares the physical memory.
+// What you do when you use a class is to refer to the memory address of the same data.
+print("After value changed, GarlicvreadClone.name: \(Garlicvread.name)")
+</string>
+			<key>ModifiedRange</key>
+			<string>{0, 1758}</string>
+			<key>OriginalContent</key>
+			<string>
+</string>
+			<key>OriginalRange</key>
+			<string>{0, 1}</string>
+		</dict>
+	</array>
+	<key>FormatVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

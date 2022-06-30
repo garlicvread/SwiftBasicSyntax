@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>BaseFile</key>
+	<string>Chapters/Chapter1.playgroundchapter/Pages/Template.playgroundpage/main.swift</string>
+	<key>Diffs</key>
+	<array>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>// Final Class
+
+// 'Final' is a reserved word. A class or method is cannot be inherited or overrided.
+// Thus, the reserve word 'final' is used when the coder wants prohibit inheritance or overriding.
+
+import SwiftUI
+
+class Friend {
+    var name : String
+    
+    // Input the parameter as the name it has.
+    init(name : String) {
+        self.name = name
+    }
+}
+
+
+// Child class of Friend
+class BestFriend : Friend {
+    override init(name : String) {
+        super.init(name : "Best Friend: " + name)
+    }
+}
+
+let myFriend = Friend(name : "Garlicvread")
+let myBestFriend = BestFriend(name: "Philex")
+
+
+
+// Final: make the class nonhereditary.
+// example of final:
+final class FootballTeam {
+    var team: String
+    init (team: String) {
+        self.team = team
+    } 
+}
+
+class PremierLeagueFootballTeam : FootballTeam {
+    override init(team: String) {
+        super.init(team: "Football Team from PL: " + team)
+    }
+}
+// PremierLeagueFootballTeam --&gt; cannot inherit from the class FoolballTeam: an error occurs.
+</string>
+			<key>ModifiedRange</key>
+			<string>{0, 1022}</string>
+			<key>OriginalContent</key>
+			<string></string>
+			<key>OriginalRange</key>
+			<string>{0, 0}</string>
+		</dict>
+	</array>
+	<key>FormatVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

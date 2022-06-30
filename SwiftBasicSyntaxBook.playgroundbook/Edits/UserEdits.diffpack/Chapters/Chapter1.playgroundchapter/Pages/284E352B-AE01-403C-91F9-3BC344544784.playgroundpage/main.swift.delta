@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>BaseFile</key>
+	<string>Chapters/Chapter1.playgroundchapter/Pages/Template.playgroundpage/main.swift</string>
+	<key>Diffs</key>
+	<array>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>//SwiftUI struct mutating
+
+import SwiftUI
+
+class Friend {
+    var name : String
+    
+    func changeName(newName: String) {
+        self.name = "무야호 " + self.name
+    }
+    
+    init(_ name: String) {
+        self.name = name
+    }
+}
+
+
+var myFriend = Friend("Garlicvread")
+myFriend.changeName(newName: "Raymond")
+
+myFriend.name
+
+struct BestFriend {
+    var name : String
+    
+    // When you want to change the name of the parameter:
+    // follow the code as it is written.
+    mutating func changeName(newName: String) {
+        //        self.name = newName
+    }
+    //    
+    //    init(_ name: String) {
+    //        self.name = name
+    //    }
+}
+
+var myBestFriend = BestFriend(name: "Philex")
+myBestFriend.changeName(newName: "ProjectATLAS")
+</string>
+			<key>ModifiedRange</key>
+			<string>{0, 752}</string>
+			<key>OriginalContent</key>
+			<string>
+</string>
+			<key>OriginalRange</key>
+			<string>{0, 1}</string>
+		</dict>
+	</array>
+	<key>FormatVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

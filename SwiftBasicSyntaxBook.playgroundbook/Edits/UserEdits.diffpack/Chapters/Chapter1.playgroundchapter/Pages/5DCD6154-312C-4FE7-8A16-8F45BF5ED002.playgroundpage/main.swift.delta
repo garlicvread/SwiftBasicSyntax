@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>BaseFile</key>
+	<string>Chapters/Chapter1.playgroundchapter/Pages/Template.playgroundpage/main.swift</string>
+	<key>Diffs</key>
+	<array>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>import UIKit
+
+// Check if the display is in the dark mode
+var isDarkMode : Bool = false
+
+if (isDarkMode == true) {
+    print("Dark Mode")
+} else {
+    print("Not Dark Mode")
+}
+
+if (isDarkMode != true) {
+    print("Not Dark Mode")
+} else {
+    print("Dark Mode")
+}
+
+if isDarkMode == true {
+    print("Dark Mode")
+} else {
+    print("Not Dark Mode")
+}
+
+if isDarkMode != true {
+    print("Not Dark Mode")
+} else {
+    print("Dark Mode")
+}
+
+
+//isDarkMode == true
+if !isDarkMode {
+    print("Not Dark Mode")
+} else {
+    print("Dark Mode")
+}
+
+if isDarkMode {
+    print("Dark Mode")
+} else {
+    print("Not Dark Mode")
+}
+
+
+
+var title : String = isDarkMode == true ? "Dark Mode" : "Not Dark Mode"
+
+var title2 : String = isDarkMode ? "Dark Mode" : "Not Dark Mode"
+
+var title3 : String = !isDarkMode ? "Not Dark Mode" : "Dark Mode"
+
+print("title: \(title)")
+
+print("title2: \(title2)")
+
+print("title3: \(title3)")
+</string>
+			<key>ModifiedRange</key>
+			<string>{1, 905}</string>
+			<key>OriginalContent</key>
+			<string></string>
+			<key>OriginalRange</key>
+			<string>{1, 0}</string>
+		</dict>
+	</array>
+	<key>FormatVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

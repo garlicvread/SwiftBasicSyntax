@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>BaseFile</key>
+	<string>Chapters/Chapter1.playgroundchapter/Pages/Template.playgroundpage/main.swift</string>
+	<key>Diffs</key>
+	<array>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>// Error Handling in Swift
+
+import SwiftUI
+
+// Errors can be defined with enum type.
+// The type of MissmatchError is error.
+enum MissmatchError : Error {
+    case nameMissmatch
+    case numberMissmatch
+}
+
+// Create a method to generate an error
+// Throw(process) the error by adding "throws" and "throw".
+func guessTheName(name input: String) throws {
+    print("guesTheName() has been called.")
+    if input != "Garlicvread" {
+        print("Wrong Guess.")
+        throw MissmatchError.nameMissmatch
+        //        return
+        // if return exists, the logic stops when the function returns something.
+    }
+    print("Correct!")
+}
+
+//// Call the method "guessTheName".
+//try? guessTheName(name: "Raymond")
+//// try: when you process the errors.
+//// ?: When you do not want to process the errors.
+
+// Error handling: do { try } catch {}
+do {
+    try guessTheName(name: "Philex")
+} catch {
+    print("ERROR caught : \(error)")
+}
+
+
+print()
+
+//try! guessTheName(name: "Pill") --&gt; error occurs
+
+
+
+// Error handling methd that has return.
+/// guessTheNumber
+/// - Parameter input: the number inputted.
+/// - Retuns: whether the guess is correct or not 
+func guessTheNumber(num input: Int) throws -&gt; Bool {
+    print("guessTheNumber() has been called.")
+    
+    if input != 10 {
+        print("Wrong Number.")
+        throw MissmatchError.numberMissmatch
+    }
+    print("Correct!")
+    return true
+}
+
+do {
+    let receivedNumber = try guessTheNumber(num: 9)
+} catch {
+    print("Resolved Error: \(error)")
+}
+</string>
+			<key>ModifiedRange</key>
+			<string>{0, 1512}</string>
+			<key>OriginalContent</key>
+			<string>
+</string>
+			<key>OriginalRange</key>
+			<string>{0, 1}</string>
+		</dict>
+	</array>
+	<key>FormatVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

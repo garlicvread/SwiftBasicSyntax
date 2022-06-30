@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>BaseFile</key>
+	<string>Chapters/Chapter1.playgroundchapter/Pages/Template.playgroundpage/main.swift</string>
+	<key>Diffs</key>
+	<array>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>import UIKit
+
+// Protocol is something that is similar to a contract.
+// You can make some promise of the way of using it.
+// The typical way of naming a protocol is to end the name of the protocol with **able, or **ing.
+// For a delegate pattern, coders typically use **delegate to name the protocol.
+// * delegate: a way of transfer an event to receiver(s).
+
+protocol Naming {
+    // Declare the variable(s) that the protocol will have.
+    // In this case, the protocol 'Naming' has its variable 'name'.
+    var name: String {
+        get set  //The value is string type, and can be got or set.
+    }
+    
+    // Declare the method(s) that the protocol will have.
+    // In this case, the protocol 'Naming' has its method 'getName',
+    // and the method will not receive any parameter from outside but will return a string type data.
+    func getName() -&gt; String
+}
+
+// Protocol implementation
+// For a struct 'Friend' set the struct to use the protocol 'Naming'.
+struct Friend: Naming {
+    var name: String
+    
+    func getName() -&gt; String {
+        return "My Friend: " + self.name
+    }
+}
+
+var myFriend = Friend(name: "Raymond")
+
+var name = myFriend.getName()
+
+print(name)
+</string>
+			<key>ModifiedRange</key>
+			<string>{1, 1181}</string>
+			<key>OriginalContent</key>
+			<string></string>
+			<key>OriginalRange</key>
+			<string>{1, 0}</string>
+		</dict>
+	</array>
+	<key>FormatVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

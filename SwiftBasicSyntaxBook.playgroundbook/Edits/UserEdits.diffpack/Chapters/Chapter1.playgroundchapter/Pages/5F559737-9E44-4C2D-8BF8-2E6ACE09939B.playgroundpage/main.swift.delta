@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>BaseFile</key>
+	<string>Chapters/Chapter1.playgroundchapter/Pages/Template.playgroundpage/main.swift</string>
+	<key>Diffs</key>
+	<array>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>// Object Constructor and Object Destructor
+
+import SwiftUI
+import UIKit
+
+// class is a sort of the "object".
+class MyFriend {
+    var name: String
+    
+    // init: start load to memory
+    init(_ name: String = "Empty Name") {
+        self.name = name
+        print("init(): MyFriend has been loaded on the memory -", self.name)
+    }
+    
+    // deinitializer: this is called when the memory load is canceled.
+    deinit {
+        print("deinit(): MyFriend has been unloaded from the memory -", self.name)
+    }
+    
+    // &lt;-- To investigate if deinit really unload the object from the memory.
+    var calledTimes = 0
+    let MAX_TIMES = 5
+    
+    static var  instanceOfSelf = [MyFriend]()
+    
+    class func destroySelf(object: MyFriend) {
+        instanceOfSelf = instanceOfSelf.filter { (firstFriend: MyFriend) in
+            // filter: a closure that receives a closure as its parameter.
+            firstFriend !== object  // include only firstFriend is not the same with object.
+        }
+    }
+    
+    func call() {
+        calledTimes += 1
+        print("called \(calledTimes)")
+        
+        if calledTimes &gt; MAX_TIMES {
+            MyFriend.destroySelf(object: self)
+        }
+    }
+    // --&gt;
+}
+
+// Construct other objects; myFirend, firstFriend
+let myFriend = MyFriend("Garlicvread")
+let firstFriend = MyFriend()
+
+// You can print the memory address by using "Unmanaged.passUnretained(객체).toOpaque()"
+let firstObjectMemoryAddress = Unmanaged.passUnretained(firstFriend).toOpaque()
+let secondObjectMemoryAddress = Unmanaged.passUnretained(myFriend).toOpaque()
+
+print(firstObjectMemoryAddress)
+print(secondObjectMemoryAddress)
+
+
+
+// &lt;-- To investigate if deinit really unload the object from the memory.
+weak var aFriendToBeDestroyed = MyFriend("Garlicvread AI")
+
+if aFriendToBeDestroyed != nil {
+    aFriendToBeDestroyed!.call()
+    // By call(), increase the auto referencing count to unloaded the data from the memory.
+} else {
+    print("No object on the memory.")
+}
+// --&gt;
+</string>
+			<key>ModifiedRange</key>
+			<string>{0, 1998}</string>
+			<key>OriginalContent</key>
+			<string>
+</string>
+			<key>OriginalRange</key>
+			<string>{0, 1}</string>
+		</dict>
+	</array>
+	<key>FormatVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

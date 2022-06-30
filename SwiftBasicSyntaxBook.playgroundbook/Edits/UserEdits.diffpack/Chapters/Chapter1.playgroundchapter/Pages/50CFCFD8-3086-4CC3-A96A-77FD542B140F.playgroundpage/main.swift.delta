@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>BaseFile</key>
+	<string>Chapters/Chapter1.playgroundchapter/Pages/Template.playgroundpage/main.swift</string>
+	<key>Diffs</key>
+	<array>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>import SwiftUI
+
+
+// optional: something that we cannot sure if it has a value or not.
+// put the character '?' after the type of the object when you do not sure whether the object has a value or not to prevent an error occurance.
+var TestVariable : Int? = nil
+
+if TestVariable == nil {  // When the "TestVariable" variable does not have any value,
+    TestVariable = 90  // add 90 to "TestVariable"
+}
+
+print(TestVariable)
+
+print()
+
+// Unwrapping the optional: Optional Uwrapping
+// When the variable 'TestVariable' has a value, then input the value of "TestVariable" into "AnotherTestVariable".
+// If we do this, the variable "AnotherTestVariable" has a value always.
+// This way of coding is called "unwrapping".
+if let AnotherTestVariable = TestVariable {
+    print("Unwrapped. Thus, has a value. AnotherTestVariable: , \(AnotherTestVariable)")
+} else {  // When there is no value
+    print("Has no value.")
+}
+
+TestVariable = nil
+
+print()
+
+// When "TestVariable" does not has any value:
+// input 10 to "MyValue"
+let MyValue = TestVariable ?? 10
+print("My Value: \(MyValue)")
+
+
+// guard - let
+func unwrap(parameter: Int?) {
+    // When you use this function, you need to input parameters: Int? definitively.
+    // If you do not want to use the function in this way, write the function with an underscore such as:
+    //     func unwarp(_ parameter: Int?) {}
+    // When you write your function in this way, you can use your function without writing the name of the parameter, such as "parameter: ". What you need to do is just write in the value(s) for the parameter(s).
+    
+    print("Unwrap() method is called")
+    
+    // When there is a value, then return it.
+    // Otherwise, does noting(pass).
+    guard let unwarppedParameter = parameter else {
+        // guard - let sentence usually returns something.
+        return
+    }
+    print("Unwrapped Parameter: \(unwarppedParameter)")
+}
+
+
+// Let two values that needs to be unwrapped.
+var FirstValue : Int? = 30
+var SecondValue : Int? = 50
+
+print("First Value: \(FirstValue)")
+print("Second Value: \(SecondValue)")
+
+print()
+
+unwrap(parameter: FirstValue)
+unwrap(parameter: SecondValue)
+</string>
+			<key>ModifiedRange</key>
+			<string>{0, 2144}</string>
+			<key>OriginalContent</key>
+			<string>
+</string>
+			<key>OriginalRange</key>
+			<string>{0, 1}</string>
+		</dict>
+	</array>
+	<key>FormatVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

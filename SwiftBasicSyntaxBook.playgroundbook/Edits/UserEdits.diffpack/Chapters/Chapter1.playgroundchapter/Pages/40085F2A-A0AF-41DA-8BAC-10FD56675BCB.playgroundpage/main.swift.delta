@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>BaseFile</key>
+	<string>Chapters/Chapter1.playgroundchapter/Pages/Template.playgroundpage/main.swift</string>
+	<key>Diffs</key>
+	<array>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>// Inheritance
+
+import Foundation
+import SwiftUI
+
+class Friend {
+    var name: String
+    init(_ name: String) {
+        self.name = name
+    }
+    
+    func sayHello() {  // A method that is included in the class "Friend".
+        print("Hey, my name is \(self.name).")
+    }
+}
+
+
+// Child class of parent class "Friend"
+// The child class "BestFriend" has the methods of the parent class "Friend"
+class BestFriend: Friend {
+    // Bring the method from its parent class through overriding.
+    override init(_ name: String) {
+        // Using "super" keyword, you can use the methods of its parent class.
+        // When override, "super.init()" must be described in the child class.
+        super.init(name +  ". Nice to meet you!")
+    }
+    
+    // The child class actually does not have any method whichh is declared in the class, but still can use the method of its parent classs.
+    override func sayHello() {
+        super.sayHello()
+    }
+}
+
+let myFriend = Friend("Raymond")
+myFriend.sayHello()
+
+let myBestFriend = BestFriend("Philex")
+myBestFriend.sayHello()
+</string>
+			<key>ModifiedRange</key>
+			<string>{0, 1070}</string>
+			<key>OriginalContent</key>
+			<string></string>
+			<key>OriginalRange</key>
+			<string>{0, 0}</string>
+		</dict>
+	</array>
+	<key>FormatVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>
