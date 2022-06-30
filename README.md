@@ -1,1 +1,1 @@
-# SwiftUIBasicSyntax
+# SwiftBasicSyntax
