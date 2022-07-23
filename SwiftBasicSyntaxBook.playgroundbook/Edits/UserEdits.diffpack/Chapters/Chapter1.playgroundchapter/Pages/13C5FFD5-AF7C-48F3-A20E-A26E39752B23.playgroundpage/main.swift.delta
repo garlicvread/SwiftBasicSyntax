@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>BaseFile</key>
+	<string>Chapters/Chapter1.playgroundchapter/Pages/Template.playgroundpage/main.swift</string>
+	<key>Diffs</key>
+	<array>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>import UIKit
+
+// Not able to insert a logic in a protocol
+protocol Naming {
+    var lastName: String { get set }
+    var firstName: String { get set }
+    func getName() -&gt; String
+}
+
+
+// Logics can be inserted using extension
+extension Naming {
+    func getFullName() -&gt; String {
+        self.lastName + " " + self.firstName
+    }
+}
+
+
+struct Friend: Naming {
+    var lastName: String
+    var firstName: String
+    func getName() -&gt; String {
+        return  self.lastName
+    }
+}
+
+let myFriend = Friend(lastName: "Kim", firstName: "Raymond")
+
+myFriend.getName()
+myFriend.getFullName()
+</string>
+			<key>ModifiedRange</key>
+			<string>{1, 584}</string>
+			<key>OriginalContent</key>
+			<string></string>
+			<key>OriginalRange</key>
+			<string>{1, 0}</string>
+		</dict>
+	</array>
+	<key>FormatVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>BaseFile</key>
+	<string>Chapters/Chapter1.playgroundchapter/Pages/Template.playgroundpage/main.swift</string>
+	<key>Diffs</key>
+	<array>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>// Protocol inheritance
+
+// Protocol itself cannot create an instance of the protocol itself.
+// When you implement a protocol, you are forced to set the variables or methods you declared in the protocol.
+// A protocol can be inherited, just like the same with a class.
+
+import UIKit
+
+// Parent protocol
+protocol Naming {
+    var name : String {
+        get set
+    }
+    
+    func getName() -&gt; String
+}
+
+
+// Another parent protocol
+protocol Aging {
+    var age : Int {
+        get set
+    }
+}
+
+
+// The child protocol of Naming and Aging
+protocol UserBioInformation: Naming, Aging {
+    
+}
+
+
+// A struct that implement the protocol UserBioInformation
+struct  MyFriend: UserBioInformation {
+    var name: String
+    var age: Int
+    
+    func getName() -&gt; String {
+        return self.name
+    }
+}
+
+
+// A class that implement the protocol UserBioInformation
+// The properties in a class must have the initial value.
+// Without the initial value set, they will prevent synthesized initializers.
+class MyBestFriend: UserBioInformation {
+    var name: String = ""
+    var age: Int = 0
+    
+    func getName() -&gt; String {
+        return self.name
+    }
+}
+
+
+</string>
+			<key>ModifiedRange</key>
+			<string>{1, 1152}</string>
+			<key>OriginalContent</key>
+			<string></string>
+			<key>OriginalRange</key>
+			<string>{1, 0}</string>
+		</dict>
+	</array>
+	<key>FormatVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>
