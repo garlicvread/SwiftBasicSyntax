@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>BaseFile</key>
+	<string>Chapters/Chapter1.playgroundchapter/Pages/Template.playgroundpage/main.swift</string>
+	<key>Diffs</key>
+	<array>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>import UIKit
+
+protocol HavePet {
+    // Associated Type
+    associatedtype T
+    // generic 형태로 무언가를 가질 수 있음
+    // generic은 타입(자료형)의 제약이 없음
+    var pets: [T] { get set }
+    mutating func gotNewPet(_ newPet: T)  // mutating: struct의 값 변경을 위한 옵션
+}
+
+
+// 프로토콜의 로직 변경을 위해 익스텐션 추가
+extension HavePet {
+    mutating func gotNewPet(_ newPet: T) {  // struct의 값 변경을 위해 mutating 키워드 추가
+        self.pets.append(newPet)
+    }
+}
+
+// enum 타입으로 동물 생성
+enum Pets {
+    case cat
+    case dog
+    case parrot
+}
+
+
+/*
+ Friend struct은 HavePet 프로토콜을 implement함.
+ 따라서 인자로 가져야 하는 요소는 1. pets, 2. gotNewPet
+ */
+struct Friend: HavePet {
+    var pets: [Pets] = []  // pets는 generic: Pets를 넣을 수 있음
+//    var pets: [Pets] = [Pets]() 로 써도 상관 없음
+}
+
+struct Family: HavePet {
+    var pets: [String] = []
+}
+
+
+var myFriend = Friend()
+
+myFriend.gotNewPet(Pets.parrot)
+myFriend.gotNewPet(Pets.dog)
+myFriend.gotNewPet(Pets.cat)
+myFriend.pets
+
+
+var myFamily = Family()
+
+myFamily.gotNewPet("Turtle")
+myFamily.gotNewPet("Snake")
+myFamily.gotNewPet("Gray Goose")
+myFamily.pets
+</string>
+			<key>ModifiedRange</key>
+			<string>{1, 1036}</string>
+			<key>OriginalContent</key>
+			<string></string>
+			<key>OriginalRange</key>
+			<string>{1, 0}</string>
+		</dict>
+	</array>
+	<key>FormatVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>
