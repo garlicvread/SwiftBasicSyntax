@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>BaseFile</key>
+	<string>Chapters/Chapter1.playgroundchapter/Pages/Template.playgroundpage/main.swift</string>
+	<key>Diffs</key>
+	<array>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>import UIKit
+
+var greeting = "Hello, World!"
+
+protocol Naming {
+    func getName() -&gt; String
+}
+
+protocol  Aging {
+    func getAge() -&gt; Int
+}
+
+// Set the alias for the protocol: Use the reserved word "typealias"
+// This can be applied to data types, classes, structs, and even closures.
+typealias Friendable = Naming &amp; Aging
+typealias FullNaming = Naming
+
+
+struct Friend: Friendable {  // == struct Friend: Naming &amp; Aging {}
+    var name: String
+    var age: Int
+    func getName() -&gt; String {
+        return self.name
+    }
+    func getAge() -&gt; Int {
+        return self.age
+    }
+}
+
+// "typealias" can ba applied to data types.
+typealias FriendName = String
+
+var friendName: FriendName = "Garlicvread"
+
+
+// "typealias" can be applied to an arrays as well.
+typealias Friends = [Friend]
+
+var myFriendsArray: Friends = []
+
+
+// "typealias" for closure
+typealias StringBlock = (String) -&gt; Void  // returns actions only
+
+func sayHi(completion: (String) -&gt; Void) {
+    print("Hello there!")
+    completion("Are you happy today?")
+}
+
+sayHi(completion: { greeting in
+    print("Receives from: ", greeting)
+})
+
+
+
+class MyClass {
+    enum MY_TYPE {  // MyClass.MyType ...
+        case DOG
+        case CAT
+        case BIRD
+    }
+    var myType = MY_TYPE.BIRD
+}
+
+var myClass = MyClass()
+
+typealias MyType = MyClass.MY_TYPE
+
+myClass.myType = MyType.DOG  // == myClass.myType = MyClass.MY_TYPE.DOG
+
+print("myClass.myType: ", myClass.myType)
+</string>
+			<key>ModifiedRange</key>
+			<string>{1, 1429}</string>
+			<key>OriginalContent</key>
+			<string></string>
+			<key>OriginalRange</key>
+			<string>{1, 0}</string>
+		</dict>
+	</array>
+	<key>FormatVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>
