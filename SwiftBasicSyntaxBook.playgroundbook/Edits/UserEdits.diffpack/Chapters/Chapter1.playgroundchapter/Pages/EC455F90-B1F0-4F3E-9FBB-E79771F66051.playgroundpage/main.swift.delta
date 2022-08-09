@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>BaseFile</key>
+	<string>Chapters/Chapter1.playgroundchapter/Pages/Template.playgroundpage/main.swift</string>
+	<key>Diffs</key>
+	<array>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>import UIKit
+
+struct Pet {
+    init() {
+        print("New you have your pet.")
+    }
+}
+
+
+struct Friend {
+    var name: String
+    var pet: Pet = Pet()
+    
+    // Without 'lazy' keyword, var name and var pet will be loaded to the memory.
+    init(_ name: String) {
+        self.name = name
+        print("Friend1 is created.")
+    }
+}
+
+var myFriend = Friend("Raymond")
+print(myFriend)  // Friend(name: "Raymond", pet: Page_Contents.Pet())
+
+
+// The same will be applied to classes and structs.
+struct Friend2 {
+    var name: String
+    
+    // With 'lazy' keyword, the instance will not be initialized at the time.
+    // Set the initial value as follows 
+    lazy var pet: Pet = Pet()
+    
+    init(_ name: String) {
+        self.name = name
+        print("Now you have your friend.")
+    }
+}
+
+// Without the 'lazy' keyword, the instance 'Pet' will be created when the 'Friend' instance is created.
+var myFriend2 = Friend2("Garlicvread")
+print(myFriend2)  // Friend2(name: "Garlicvread", $__lazy_storage_$_pet: nil)
+
+// When there is the keyword 'lazy', the instance will be loaded into the memory when it is used.
+myFriend2.pet = Pet()
+print(myFriend2)  // Friend2(name: "Garlicvread", $__lazy_storage_$_pet: Optional(Page_Contents.Pet())) &lt;-- Pet() is loaded
+</string>
+			<key>ModifiedRange</key>
+			<string>{1, 1262}</string>
+			<key>OriginalContent</key>
+			<string></string>
+			<key>OriginalRange</key>
+			<string>{1, 0}</string>
+		</dict>
+	</array>
+	<key>FormatVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>
