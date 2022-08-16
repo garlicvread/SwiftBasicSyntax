@@ -12,37 +12,38 @@
 
 struct Pet {
     init() {
-        print("New you have your pet.")
+        print("New pet.\n")
     }
 }
 
-
+// Without 'lazy' keyword, var 'name' and 'pet' will be loaded to the memory when the struct is declaired.
 struct Friend {
     var name: String
     var pet: Pet = Pet()
     
-    // Without 'lazy' keyword, var name and var pet will be loaded to the memory.
     init(_ name: String) {
         self.name = name
-        print("Friend1 is created.")
+        print("\nWithout 'lazy' keyworkd: Friend1 is created.\n")
     }
 }
+
 
 var myFriend = Friend("Raymond")
 print(myFriend)  // Friend(name: "Raymond", pet: Page_Contents.Pet())
 
+print()
 
-// The same will be applied to classes and structs.
+// The same will be applied to classes and structs as well.
 struct Friend2 {
     var name: String
     
     // With 'lazy' keyword, the instance will not be initialized at the time.
-    // Set the initial value as follows 
+    // Set the initial value as follows.
     lazy var pet: Pet = Pet()
     
     init(_ name: String) {
         self.name = name
-        print("Now you have your friend.")
+        print("\nWith 'lazy' keyword: Now you have your friend.\n")
     }
 }
 
@@ -50,12 +51,11 @@ struct Friend2 {
 var myFriend2 = Friend2("Garlicvread")
 print(myFriend2)  // Friend2(name: "Garlicvread", $__lazy_storage_$_pet: nil)
 
-// When there is the keyword 'lazy', the instance will be loaded into the memory when it is used.
-myFriend2.pet = Pet()
+myFriend2.pet = Pet()  // myfriend2.pet is initialized here --&gt; Note that 'New pet' is printed.
 print(myFriend2)  // Friend2(name: "Garlicvread", $__lazy_storage_$_pet: Optional(Page_Contents.Pet())) &lt;-- Pet() is loaded
 </string>
 			<key>ModifiedRange</key>
-			<string>{1, 1262}</string>
+			<string>{1, 1321}</string>
 			<key>OriginalContent</key>
 			<string></string>
 			<key>OriginalRange</key>
