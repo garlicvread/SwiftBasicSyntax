@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>BaseFile</key>
+	<string>Chapters/Chapter1.playgroundchapter/Pages/Template.playgroundpage/main.swift</string>
+	<key>Diffs</key>
+	<array>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>// Higher order functions receive closures as parameters.
+// Official documentation: https://docs.swift.org/swift-book/LanguageGuide/Closures.html
+
+import UIKit
+
+// The method below is a closure.
+// It receives a String then returns(-&gt;) a string.
+func getName(_ name: String) -&gt; String {
+    return "My name is \(name)"
+}
+
+
+var getNameClosure: (String) -&gt; String
+
+
+// The method below receives the closure 'getName' as its parameter
+// and the parameter 'name' used in the closure
+// then returns the result 'getName(name)'.
+func sayHello(getName: (String) -&gt; String,
+              name: String) -&gt; String {
+    return getName(name)
+}
+
+let result1 = sayHello(getName: getName(_:), name: "Garlicvread")
+
+
+// Example
+let numbers = [34, 4, -3 , -12, 5, 9, 10, 91, 23, 6, 9]
+
+// Transform the data type: Int -&gt; String
+let stringNumbers = numbers.map { (element: Int) -&gt; String in
+    return "\(element)"
+}
+
+let evenNumbers: [Int] = numbers.filter { element in
+    return element % 2 == 0
+}
+
+let oddNumbers: [Int] = numbers.filter { element in
+    return element % 2 != 0
+}
+</string>
+			<key>ModifiedRange</key>
+			<string>{0, 1069}</string>
+			<key>OriginalContent</key>
+			<string>
+</string>
+			<key>OriginalRange</key>
+			<string>{0, 1}</string>
+		</dict>
+	</array>
+	<key>FormatVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>
