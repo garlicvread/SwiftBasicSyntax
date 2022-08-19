@@ -31,10 +31,10 @@ func sayHello(getName: (String) -&gt; String,
     return getName(name)
 }
 
-let result1 = sayHello(getName: getName(_:), name: "Garlicvread")
+let result1 = sayHello(getName: getName(_: ), name: "Garlicvread")
+print("result1: \(result1)")
 
-
-// Example
+// Example 1
 let numbers = [34, 4, -3 , -12, 5, 9, 10, 91, 23, 6, 9]
 
 // Transform the data type: Int -&gt; String
@@ -49,9 +49,37 @@ let evenNumbers: [Int] = numbers.filter { element in
 let oddNumbers: [Int] = numbers.filter { element in
     return element % 2 != 0
 }
+
+
+// Example 2
+func getWords(_ firstWord: String, _ lastWord: String) -&gt; String {
+    return firstWord + " " + lastWord
+}
+
+func getWordsTwice(_ firstWord: String, _ lastWord: String) -&gt; String {
+    return firstWord + " " + lastWord + " / REPEAT / " + firstWord + " " + lastWord
+}
+
+// Put the closure getWords as a parameter
+func speakSomethin(getWords: (_ first: String, _ last: String) -&gt; String,
+                   firstInput: String,
+                   lastInput: String) -&gt; String {
+    // Return the inputted function
+    return getWords(firstInput, lastInput) 
+}
+
+let result2 = speakSomethin(getWords: getWords,
+                            firstInput: "Hello,",
+                            lastInput: "my name is Garlicvread.")
+print("result2: \(result2)")
+
+let result3 = speakSomethin(getWords: getWordsTwice,
+                            firstInput: "Good to see you.",
+                            lastInput: "I am Garlicvread.")
+print("result3: \(result3)")
 </string>
 			<key>ModifiedRange</key>
-			<string>{0, 1069}</string>
+			<string>{0, 2067}</string>
 			<key>OriginalContent</key>
 			<string>
 </string>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>BaseFile</key>
+	<string>Chapters/Chapter1.playgroundchapter/Pages/Template.playgroundpage/main.swift</string>
+	<key>Diffs</key>
+	<array>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>import UIKit
+
+// MARK: Sort function implementation
+var myArray1 = [1, 3, 5, 7, 9, 2, 4, 6, 8, 0]
+
+var ascendingArray = myArray1.sorted(by: { (firstValue: Int,
+                                           secondValue: Int) -&gt; Bool in
+    return firstValue &lt; secondValue
+})
+print("Ascending Array: \(ascendingArray)")
+
+
+// MARK: ascending shortened
+var numbers1 = [34, 4, -3 , -12, 5, 9, 10, 91, 23, 6, 9, 11, 15, 43, -22]
+
+var ascendingArrayShorten = numbers1.sorted()  // ascending order
+
+print("\nOriginal numbers1 array: \(numbers1)")
+
+numbers1.sort()
+
+print("\nShorten ascending array: \(numbers1)")  // The collection itself has been changed.
+
+
+
+// MARK: Sort function implementation
+var myArray = [1, 3, 5, 7, 9, 2, 4, 6, 8, 0]
+
+var descendingArray = myArray.sorted(by: { (firstValue: Int,
+                                           secondValue: Int) -&gt; Bool in
+    return firstValue &gt; secondValue
+})
+print("\nDescending Array: \(descendingArray)")
+
+
+// MARK: descending order sort
+var numbers2 = [34, 4, -3 , -12, 5, 9, 10, 91, 23, 6, 9, 11, 15, 43, -22]
+
+var descendingArrayShorten = numbers2.sorted(by: &gt;)  // descending order
+
+print("\nOriginal numbers2 array: \(numbers2)")
+
+numbers2.sort(by: &gt;)
+
+print("\nShorten descending array: \(numbers2)")
+
+
+
+</string>
+			<key>ModifiedRange</key>
+			<string>{0, 1258}</string>
+			<key>OriginalContent</key>
+			<string></string>
+			<key>OriginalRange</key>
+			<string>{0, 0}</string>
+		</dict>
+	</array>
+	<key>FormatVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>
