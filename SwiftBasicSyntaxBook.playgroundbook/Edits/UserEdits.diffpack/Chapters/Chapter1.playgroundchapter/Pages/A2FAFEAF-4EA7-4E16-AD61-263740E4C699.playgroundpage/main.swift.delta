@@ -54,15 +54,15 @@ numbers2.sort(by: &gt;)
 
 print("\nShorten descending array: \(numbers2)")
 
-
-
+ 
 </string>
 			<key>ModifiedRange</key>
 			<string>{0, 1258}</string>
 			<key>OriginalContent</key>
-			<string></string>
+			<string>
+</string>
 			<key>OriginalRange</key>
-			<string>{0, 0}</string>
+			<string>{0, 1}</string>
 		</dict>
 	</array>
 	<key>FormatVersion</key>
