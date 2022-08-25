@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>BaseFile</key>
+	<string>Chapters/Chapter1.playgroundchapter/Pages/Template.playgroundpage/main.swift</string>
+	<key>Diffs</key>
+	<array>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>import UIKit
+
+// 'struct' is initialized member-wisely
+// Even though it does not have an initializer,
+// the struct is considered to have the initializer.
+struct MyPet {
+    var title: String = "No title"
+    
+    // 'private (set): makes the variable not be changed outside if the struct
+    private (set) var name: String = "No title"
+    
+    // You need to give an option 'mutating' when you change the value
+    // of a member that exists inside a struct.
+    mutating func setName(to newName: String) {
+        self.name = newName
+    }
+}
+
+
+var myPet = MyPet()
+//myPet.name  // No title
+//myPet.title  // No title
+//myPet.title = "SDF"  // Assign the string "SDF" to variable myPet.title
+//myPet.title  // "SDF" returned
+
+//myPet.name = "SDFSDF" // Cannot assign to property: 'name' settrer is inaccessible
+
+myPet.setName(to: "DOG")
+myPet.name
+</string>
+			<key>ModifiedRange</key>
+			<string>{0, 851}</string>
+			<key>OriginalContent</key>
+			<string>
+</string>
+			<key>OriginalRange</key>
+			<string>{0, 1}</string>
+		</dict>
+	</array>
+	<key>FormatVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>
