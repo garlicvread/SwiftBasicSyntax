@@ -14,13 +14,14 @@ let testItemArray: [String] = ["Apple", "Pear", "Orange", "Strawberry", "Peach"]
 
 var ItemWithIndex: [String] = []
 
+// You can get the index number using .enumerated()
 for (index, anItem) in testItemArray.enumerated() {
     print("index: \(index)", "item: \(anItem)")
     ItemWithIndex.append("No.\(index+1) \(anItem)")
 }
 </string>
 			<key>ModifiedRange</key>
-			<string>{1, 284}</string>
+			<string>{1, 336}</string>
 			<key>OriginalContent</key>
 			<string></string>
 			<key>OriginalRange</key>
