@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>BaseFile</key>
+	<string>Chapters/Chapter1.playgroundchapter/Pages/Template.playgroundpage/main.swift</string>
+	<key>Diffs</key>
+	<array>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>import UIKit
+
+// Example 1: String array
+let friendsArray: [String] = ["Gilbert",
+                              "Mathew",
+                              "Neithan",
+                              "Rohan",
+                              "Mark"]
+
+let mfFriends = friendsArray.map { aFriend in
+    return aFriend + " is my friend."
+}
+
+
+// Example 2: Numeric array
+let numbersArray: [Int] = [50, 22, 38, 25, 37]
+
+// Option 1
+let myNumbers1: [String] = numbersArray.map { (aNumber: Int) in
+    return "My number: \(aNumber)"
+}
+
+// Option 2
+let myNumbers2: [String] = numbersArray.map {
+    return "My number: \($0)"
+}
+
+
+// Example 3: Dictionary
+let animalSoundDictionary = ["Cat" : "Meow",
+                             "Dog" : "Woof",
+                             "Horse" : "Neigh",
+                             "Pig" : "Oink",
+                             "Cow" : "Moo"]
+
+// Option 1
+let animalSounds1: [String] = animalSoundDictionary.map { (animal: String, sound: String) in
+    return "\(animal) sounds \"\(sound)\"."
+}
+
+// Option 2
+let animalSounds2: [String] = animalSoundDictionary.map {
+    return "\($0) sounds \"\($1)\"."
+}
+
+
+// Example 4: Set
+let numberSet: Set&lt;Int&gt; = [1, 1, 1, 2, 2, 3, 4, 4, 4, 4, 5, 5, 5]
+
+// Return strings
+let numberTimesTenString: [String] = numberSet.map { aNumber in
+    return "\(aNumber * 10)"
+}
+
+// Return ints
+let NumberTimesTenInt: [Int] = numberSet.map { aNumber in
+    return aNumber * 10
+}
+</string>
+			<key>ModifiedRange</key>
+			<string>{1, 1425}</string>
+			<key>OriginalContent</key>
+			<string></string>
+			<key>OriginalRange</key>
+			<string>{1, 0}</string>
+		</dict>
+	</array>
+	<key>FormatVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>
