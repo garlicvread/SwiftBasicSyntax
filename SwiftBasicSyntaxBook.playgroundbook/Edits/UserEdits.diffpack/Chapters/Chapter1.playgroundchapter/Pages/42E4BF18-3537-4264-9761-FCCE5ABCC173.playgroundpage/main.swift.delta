@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>BaseFile</key>
+	<string>Chapters/Chapter1.playgroundchapter/Pages/Template.playgroundpage/main.swift</string>
+	<key>Diffs</key>
+	<array>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>// When the data type is optional
+let friendsArray: [String?] = ["Gilbert", nil, "Neithan", nil, "Mark"]
+
+// Optional uiwrapping using `.map{}`
+let myBestFriends1: [String] = friendsArray.map { aFriend in
+    let aBestFriend = aFriend ?? ""
+    return "My best friend is " + aBestFriend
+}
+
+// Optional unwrapping 1 using `.compactMap{}`
+// `.compactMap{}` brings in only non-nil values
+let myBestFriends2: [String] = friendsArray.compactMap { aFriend in
+    return aFriend
+}
+
+// Optional unwrapping 2 using `.compactMap{}`
+let myBestFriends3: [String] = friendsArray.compactMap { $0 }.map {  // Higher order function chaning
+    return "My best friend -&gt; " + $0
+}
+</string>
+			<key>ModifiedRange</key>
+			<string>{0, 664}</string>
+			<key>OriginalContent</key>
+			<string>
+</string>
+			<key>OriginalRange</key>
+			<string>{0, 1}</string>
+		</dict>
+	</array>
+	<key>FormatVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>
